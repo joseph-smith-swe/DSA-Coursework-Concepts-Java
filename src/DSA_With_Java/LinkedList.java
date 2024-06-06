@@ -102,5 +102,45 @@ public class LinkedList {
         }
         return temp; //Temp is the pointer to the node was removed.
     }
+
+    public Node get (int index){
+
+        if(index < 0 || index >= length){ //check to see that we are not out of the bounds of the LinkedList
+            return null;
+        }
+        Node temp = head; //the pointer of type node
+
+        for (int i = 0; i < index; i++) {
+            temp = temp.next; //we move the pointer forward //loop with stop "i" is no longer less than the index. So, on the "index" parameter
+
+        }
+        return temp;
+    }
+
+    public boolean set(int index, int value){
+        /*We set the node with a particular value at a particular index*/
+        Node temp = get(index); //we used the get() method above
+        if(temp != null){
+            temp.value = value;
+            return true;
+        }
+        return false;
+    }
+
+    public boolean setV2(int index, int value){
+        /*We set the node with a particular value at a particular index*/
+        if(index < 0 || index >= length){ //check to see that we are not out of the bounds of the LinkedList
+            return false;
+        }
+        Node temp = head;
+
+        for (int i = 0; i < index; i++) {
+            temp = temp.next;
+        }
+            temp.value = value;
+            return true;
+
+    }
+
 }
 
