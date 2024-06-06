@@ -58,6 +58,23 @@ public class Main {
         myLL3.append(3);
         myLL3.insert(2,1);
         myLL3.printList();
+        System.out.println("////////////myLL4/////////////");
 
+        LinkedList myLL4 = new LinkedList(11);
+        myLL4.append(3);
+        myLL4.append(23);
+        myLL4.append(7);
+//        myLL4.remove(2);
+        myLL4.printList();
+
+        System.out.println("/////////////myLL5 - Reverse the Linked List");
+        LinkedList myLL5 = new LinkedList(1);
+        myLL5.append(2);
+        myLL5.append(3);
+        myLL5.append(4);
+        myLL5.printList();
+        System.out.println("The reversed list: ");
+        myLL5.reverse();
+        myLL5.printList();
     }
 }

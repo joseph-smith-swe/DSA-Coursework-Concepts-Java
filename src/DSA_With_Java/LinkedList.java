@@ -183,7 +183,8 @@ public class LinkedList {
     public Node remove(int index){
         /*We remove a node at a particular index and return the pointer to that node*/
         if(index < 0 || index >= length){
-            /*Remove() has a return type of Node. If we are not returning a Node,
+            /*We cannot remove and index that is out of range
+            Remove() has a return type of Node. If we are not returning a Node,
             * then we return null*/
             return null;
         }
@@ -199,11 +200,33 @@ public class LinkedList {
         }
         Node prev = get(index-1);
         Node temp = prev.next; //This is a O(1) operation instead of using get() with is an O(n) operation.
-        
+
         prev.next = temp.next;
         temp.next = null;
         length--;
         return temp;
+    }
+
+    public void reverse(){
+        /*We are reversing the linked list in place. This is not a reversed duplicate.*/
+        Node temp = head;
+        head = tail;
+        tail = temp;
+        Node after = temp.next;
+        Node before = null;
+        for (int i = 0; i < length; i++) {
+            after = temp.next;
+            temp.next = before; //this flips the pointer temp.next to reverse
+            before = temp;
+            temp = after;
+
+        }
+
+
+
+
+
+
     }
 
 
