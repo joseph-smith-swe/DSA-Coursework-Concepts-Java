@@ -100,6 +100,7 @@ public class LinkedList {
         if(length == 0){
             tail = null;
         }
+        /*The pointer to the Node that was removed is returned*/
         return temp; //Temp is the pointer to the node was removed.
     }
 
@@ -151,9 +152,12 @@ public class LinkedList {
            return false;
        }
        if(index == 0){
-           //we use the prepend method to insert at the front of the linked list
-           //if the index is 0, we use the prepend method
+           /*we use the prepend method to insert at the front of the linked list
+           if the index is 0, we use the prepend method*/
            prepend(value);
+           /*Prepend has a return type of void and not boolean, so we cannot put Prepend()
+           * in the return statement of insert(). We must explicitly make a return statement
+           * that returns a boolean. In this case, it is true.*/
            return true;
        }
        if(index == length){
@@ -174,10 +178,34 @@ public class LinkedList {
        length++;
        //increase the length by 1 because we added to the node
        return true;
-
-
-
     }
+
+    public Node remove(int index){
+        /*We remove a node at a particular index and return the pointer to that node*/
+        if(index < 0 || index >= length){
+            /*Remove() has a return type of Node. If we are not returning a Node,
+            * then we return null*/
+            return null;
+        }
+        if(index == 0){
+            /*removeFirst() has a return type of Node just like the remove() method.
+            * Because of this, we can use removeFirst() in a return statement.*/
+            return removeFirst();
+        }
+        if(index == length-1){
+            /*removeLast() has a return type of Node
+            * so we can use it here inside the return statement.*/
+            return removeLast();
+        }
+        Node prev = get(index-1);
+        Node temp = prev.next; //This is a O(1) operation instead of using get() with is an O(n) operation.
+        
+        prev.next = temp.next;
+        temp.next = null;
+        length--;
+        return temp;
+    }
+
 
 }
 
