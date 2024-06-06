@@ -53,5 +53,11 @@ public class Main {
 ////        myLL2.set(1,5);
 //        myLL2.printList();
 
+        LinkedList myLL3 = new LinkedList(0);
+        myLL3.append(2);
+        myLL3.append(3);
+        myLL3.insert(2,1);
+        myLL3.printList();
+
     }
 }

@@ -142,5 +142,42 @@ public class LinkedList {
 
     }
 
+    public boolean insert(int index, int value){
+       /*Here we insert a new Node with of a particular value at a particular index*/
+       if(index <0 || index > length){
+           //we cannot insert before index 0 OR
+           // if index is greater than the length of the array
+           //in other words, if the next is out of range
+           return false;
+       }
+       if(index == 0){
+           //we use the prepend method to insert at the front of the linked list
+           //if the index is 0, we use the prepend method
+           prepend(value);
+           return true;
+       }
+       if(index == length){
+           append(value);
+           return true;
+       }
+       Node newNode = new Node(value);
+       Node temp = get(index-1);
+       newNode.next = temp.next;
+       /*We make the newNode pointer point to the temp pointer which
+       * is already pointing to the Node of the index that was passed
+       * as a parameter into this method
+        */
+       temp.next = newNode;
+       /*Because newNode now points to the next Node in the sequence via its ".next" field
+        * and we set temp.next to point to newNode, newNode
+        * is inserted into the Linked List*/
+       length++;
+       //increase the length by 1 because we added to the node
+       return true;
+
+
+
+    }
+
 }
 
