@@ -75,7 +75,14 @@ public class Main {
         myLL5.printList();
         System.out.println("The reversed list: ");
         myLL5.reverse();
-        myLL5.printList();      
+        myLL5.printList();
+
+        System.out.println("/////////////////myDLL1////////////////////");
+        DoublyLinkedList myDLL1 = new DoublyLinkedList(7);
+        myDLL1.getHead();
+        myDLL1.getTail();
+        myDLL1.getLength();
+        myDLL1.printLIst();
 
     }
 }
