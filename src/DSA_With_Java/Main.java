@@ -87,7 +87,13 @@ public class Main {
         System.out.println("/////////////myDLL2///////////////////");
         DoublyLinkedList myDll2 = new DoublyLinkedList(1);
         myDll2.append(2);
-        myDll2.printLIst();
 
+        //(2) Items - Returns 2 Node
+        System.out.println(myDll2.removeLast().value);
+        //(1) Item -Returns 1 Node
+        System.out.println(myDll2.removeLast().value);
+        //(0) Items -Returns null
+        System.out.println(myDll2.removeLast());
+        //myDll2.printLIst();
     }
 }

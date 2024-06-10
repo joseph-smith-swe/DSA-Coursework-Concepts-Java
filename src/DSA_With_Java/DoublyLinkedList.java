@@ -57,4 +57,26 @@ public class DoublyLinkedList {
         }
         length++;
     }
+
+    public Node removeLast(){
+        /*Edge Cases:
+        * 1) Empty Linked List
+        * 2) One item in the Linked List
+        * 3) Two or more items in Linked List*/
+        if(length == 0) return null; /*Edge Case #1 */
+        Node temp = tail; //temp points to tail
+            /*Edge case #2*/
+        if(length == 1){
+            head = null;
+            tail = null;
+        } else {
+            /*Edge Case #3*/
+            tail = tail.prev; //tail move one over to the previous Node
+            tail.next = null; //break off from next (last) node
+            temp.prev = null; //break off from previous (next to last) Node
+        }
+        length--;
+        return temp;
+    }
+
 }
