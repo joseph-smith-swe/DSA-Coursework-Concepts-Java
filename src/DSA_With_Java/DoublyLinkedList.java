@@ -79,4 +79,28 @@ public class DoublyLinkedList {
         return temp;
     }
 
+    public void prepend(int value){
+        /*Edge cases:
+        * 1) Empty Linked List
+        * 2) One or more items in Linked List*/
+        Node newNode = new Node(value);
+        if(length == 0){
+            /*Edge Case #1*/
+            head = newNode;
+            tail = newNode;
+        }else{
+            /*Edge Case #2*/
+            newNode.next = head;
+            /*Above: next pointer of newNode points
+            to the head pointer which points to the first Node of the linked list*/
+            head.prev = newNode;
+            /*prev pointer of first Node in linked list set to point to the newNode to be inserted */
+            head = newNode;
+            /*head pointer set to point to the newNode.
+            head pointer is "moved" over to the newNode.
+            newNode is not added to the DLL at the beginning of the DLL*/
+        }
+        length++;
+    }
+
 }

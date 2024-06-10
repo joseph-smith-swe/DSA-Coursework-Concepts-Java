@@ -84,9 +84,12 @@ public class Main {
         myDLL1.getLength();
         myDLL1.printLIst();
 
-        System.out.println("/////////////myDLL2///////////////////");
+        System.out.println("/////////////myDLL2-removeLast()///////////////////");
         DoublyLinkedList myDll2 = new DoublyLinkedList(1);
         myDll2.append(2);
+        System.out.println("Before removeLast() invoked: ");
+        myDll2.printLIst();
+        System.out.println("After removeLast() invoked: ");
 
         //(2) Items - Returns 2 Node
         System.out.println(myDll2.removeLast().value);
@@ -95,5 +98,14 @@ public class Main {
         //(0) Items -Returns null
         System.out.println(myDll2.removeLast());
         //myDll2.printLIst();
+
+        System.out.println("/////////////myDLL3-prepend()///////////////////");
+        DoublyLinkedList myDLL3 = new DoublyLinkedList(2);
+        myDLL3.append(3);
+        System.out.println("Before prepend: ");
+        myDLL3.printLIst();
+        System.out.println("After prepend: ");
+        myDLL3.prepend(1);
+        myDLL3.printLIst();
     }
 }
