@@ -84,5 +84,10 @@ public class Main {
         myDLL1.getLength();
         myDLL1.printLIst();
 
+        System.out.println("/////////////myDLL2///////////////////");
+        DoublyLinkedList myDll2 = new DoublyLinkedList(1);
+        myDll2.append(2);
+        myDll2.printLIst();
+
     }
 }

@@ -42,4 +42,19 @@ public class DoublyLinkedList {
     public void getLength(){
         System.out.println("Length: " + length);
     }
+
+    public void append(int value){
+        Node newNode = new Node(value);//create new node
+        if(length == 0){// or "head == null"
+            /*If the linked list is empty, reference variables "head" and "tail"
+            * will point to the newly created Node. */
+            head = newNode;
+            tail =  newNode;
+        } else {
+            tail.next = newNode; //next pointer of tail will point to  newNode
+            newNode.prev = tail; //prev pointer on newNode points to the same Node tail is pointng to.
+            tail = newNode; //tail ref var now points to newNode and adds newNode to the DLL
+        }
+        length++;
+    }
 }
