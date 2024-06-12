@@ -90,15 +90,9 @@ public class DoublyLinkedList {
             tail = newNode;
         }else{
             /*Edge Case #2*/
-            newNode.next = head;
-            /*Above: next pointer of newNode points
-            to the head pointer which points to the first Node of the linked list*/
-            head.prev = newNode;
-            /*prev pointer of first Node in linked list set to point to the newNode to be inserted */
-            head = newNode;
-            /*head pointer set to point to the newNode.
-            head pointer is "moved" over to the newNode.
-            newNode is not added to the DLL at the beginning of the DLL*/
+            newNode.next = head; /* next pointer of newNode points to the head pointer which points to the first Node of the linked list*/
+            head.prev = newNode; /*prev pointer of first Node in linked list set to point to the newNode to be inserted */
+            head = newNode; /*head pointer set to point to the newNode. head pointer is "moved" over to the newNode. newNode is not added to the DLL at the beginning of the DLL*/
         }
         length++;
     }
@@ -125,15 +119,15 @@ public class DoublyLinkedList {
     }
 
     public Node get(int index){
-        if(index <0 || index >= length) return null; //we cannot retrieve an Node who's index is out of bounds of the LL
-        Node temp =  head; //create a temp ref var to point to the head Node of the LL
+        if(index <0 || index >= length) return null; //we cannot retrieve a Node whose index is out of bounds of the DLL
+        Node temp =  head; //create a temp ref var to point to the head Node of the DLL
         if(index < length/2) {
-            /*Foward iterationg for-loop*/
+            /*Forward iterating for-loop*/
             for (int i = 0; i < index; i++) {
                 temp = temp.next; //we move temp ref var forward
             }
         }else {
-            temp = tail; //set temp ref var to point to the tail Node of the LL
+            temp = tail; //set temp ref var to point to the tail Node of the DLL
             /*Rearward iterating for-loop*/
             for (int i = length - 1; i > index; i--) {
                 temp = temp.prev; //temp moves rearward

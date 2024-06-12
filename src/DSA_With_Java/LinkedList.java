@@ -56,12 +56,12 @@ public class LinkedList {
             return null;
         }
         Node temp = head;
-        Node pre = head;
+        Node prev = head;
         while (temp.next != null){
-            pre =  temp;
+            prev =  temp;
             temp = temp.next;
         }
-        tail = pre;
+        tail = prev;
         tail.next =  null;
         length--;
         if(length==0){
@@ -222,7 +222,5 @@ public class LinkedList {
 
         }
     }
-
-
 }
 
