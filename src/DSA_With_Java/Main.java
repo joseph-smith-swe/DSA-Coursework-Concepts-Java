@@ -114,7 +114,7 @@ public class Main {
 
         myDLL4.printList();
 
-        System.out.println("///////removeFirst invocations/////////");
+        System.out.println("///////removeFirst() invocations/////////");
         //(2) Items - Return 2 Node
         System.out.println(myDLL4.removeFirst().value);
         //(1) Item - Return 1 Node
@@ -122,5 +122,18 @@ public class Main {
         //(0) Items -Returns null
         System.out.println(myDLL4.removeFirst());
         //myDLL4.printList();
+
+        System.out.println("///////////myDLL5- get()/////////////");
+        DoublyLinkedList myDLL5 = new DoublyLinkedList(0);
+        myDLL5.append(1);
+        myDLL5.append(2);
+        myDLL5.append(3);
+        myDLL5.printList();
+
+        System.out.println("//////////myDLL5- get() invoked//////////////");
+        System.out.println(myDLL5.get(1).value);
+        System.out.println(myDLL5.get(2).value + "\n");
+        System.out.println("//////////Original myDLL5 nodes are unchanged///////////");
+        myDLL5.printList();
     }
 }

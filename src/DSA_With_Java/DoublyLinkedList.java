@@ -123,4 +123,22 @@ public class DoublyLinkedList {
         length--; //decrement the Linked List
         return temp; //return the pointer to the Node that was removed.
     }
+
+    public Node get(int index){
+        if(index <0 || index >= length) return null; //we cannot retrieve an Node who's index is out of bounds of the LL
+        Node temp =  head; //create a temp ref var to point to the head Node of the LL
+        if(index < length/2) {
+            /*Foward iterationg for-loop*/
+            for (int i = 0; i < index; i++) {
+                temp = temp.next; //we move temp ref var forward
+            }
+        }else {
+            temp = tail; //set temp ref var to point to the tail Node of the LL
+            /*Rearward iterating for-loop*/
+            for (int i = length - 1; i > index; i--) {
+                temp = temp.prev; //temp moves rearward
+            }
+        }
+        return temp;
+    }
 }
