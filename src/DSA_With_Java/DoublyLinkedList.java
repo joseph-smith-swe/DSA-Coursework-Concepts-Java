@@ -23,7 +23,7 @@ public class DoublyLinkedList {
         length = 1;
     }
 
-    public void printLIst(){
+    public void printList(){
         Node temp = head;
         while (temp != null){
             System.out.println(temp.value);
@@ -103,4 +103,24 @@ public class DoublyLinkedList {
         length++;
     }
 
+    public Node removeFirst(){
+        /*Edge Cases:
+        * 1) Empty Linked List
+        * 2) One item in Linked List
+        * 3) Multiple items in Linked List
+        * */
+        if(length == 0) return null;
+        Node temp = head;
+        if(length == 1){
+            head = null;
+            tail = null;
+        } else{
+            head = head.next; //move head pointer one node to the right
+            head.prev = null; //disconnects Node head is pointing to from previous (first) Node
+            temp.next = null; //disconnects Node temp is pointing to (the first node) from next Node
+                                // which head is now pointing to
+        }
+        length--; //decrement the Linked List
+        return temp; //return the pointer to the Node that was removed.
+    }
 }
