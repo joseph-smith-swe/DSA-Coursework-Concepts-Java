@@ -1,4 +1,4 @@
-package DSA_With_Java;
+package DSA_With_Java.Data_Structures.LinkedList;
 
 public class LinkedList {
     private Node head;

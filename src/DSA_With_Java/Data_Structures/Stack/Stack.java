@@ -1,4 +1,4 @@
-package DSA_With_Java;
+package DSA_With_Java.Data_Structures.Stack;
 
 public class Stack {
     /*We create a stack with a linked list implementation*/
@@ -42,7 +42,7 @@ public class Stack {
             top = newNode;
         }else{
             newNode.next = top; //next pointer of newNode points to the same Node that the top pointer is pointing to
-            top = newNode;  //top pointer "moved" to point to tne newNode
+            top = newNode;  //top pointer "moved" to point to the newNode
         }
         height++;
     }
