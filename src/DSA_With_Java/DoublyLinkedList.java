@@ -135,4 +135,41 @@ public class DoublyLinkedList {
         }
         return temp;
     }
+
+    public boolean set(int index, int value){
+        /*Set() change the value of a Node at a particular index*/
+        Node temp = get(index); //get() with return null if index is out of range or the Node at that particular index
+        if(temp != null){
+            /*If temp points to an actual Node, the set temp.value to the value passed as an argument.*/
+            temp.value = value;
+            return true; //Since the value of temp.value was changed successfully, we return true
+        }
+        return false;
+    }
+
+    public boolean insert(int index, int value){
+        /*Insert a new Node with a particular value at a particular index and return a boolean value*/
+        if(index < 0 || index > length) return false;
+        if(index == 0){ //Add to the beginning
+            prepend(value);
+            return true;
+        }
+        if(index == length){//Add to the end
+            append(value);
+            return true;
+        }
+        /*We insert a Node in the middle*/
+        Node newNode = new Node(value);
+        Node before = get(index - 1); //get() is O(n)
+        Node after = before.next; //This is a O(1) operation, instead of using the get() O(n) method
+
+        /*These 4 lines of code inserts the Node into the Linked List via changing the pointers (ref vars)*/
+        newNode.prev = before; //take prev pointer of newNode and point it at the same Node before is pointing to
+        newNode.next = after; //take next pointer of newNode and point it at the same Node after is pointing to
+        before.next = newNode;
+        after.prev = newNode;
+
+        length++;
+        return true;
+    }
 }

@@ -44,15 +44,17 @@ public class Main {
 //        System.out.println("The returned node from the get() method: "+ myLL.get(2).value);
 //        myLL.printList();
 
-//        LinkedList myLL2 = new LinkedList(11);
-//        myLL2.append(3);
-//        myLL2.append(23);
-//        myLL2.append(7);
-//        myLL2.setV2(3,4);  //"3" will change to "4"
-////        System.out.println(myLL2.setV2(-1,4));
-////        myLL2.set(1,5);
-//        myLL2.printList();
+        System.out.println("//////////////myLL2///////////////////");
+        LinkedList myLL2 = new LinkedList(11);
+        myLL2.append(3);
+        myLL2.append(23);
+        myLL2.append(7);
+        myLL2.setV2(3,4);  //"3" will change to "4"
+//        System.out.println(myLL2.setV2(-1,4));
+//        myLL2.set(1,5);
+        myLL2.printList();
 
+        System.out.println("//////////////////myLL3////////////////");
         LinkedList myLL3 = new LinkedList(0);
         myLL3.append(2);
         myLL3.append(3);
@@ -79,6 +81,7 @@ public class Main {
 
         System.out.println("/////////////////myDLL1////////////////////");
         DoublyLinkedList myDLL1 = new DoublyLinkedList(7);
+        System.out.println("/////myDLL1 get methods invoked///////////////");
         myDLL1.getHead();
         myDLL1.getTail();
         myDLL1.getLength();
@@ -135,5 +138,25 @@ public class Main {
         System.out.println(myDLL5.get(2).value + "\n");
         System.out.println("//////////Original myDLL5 nodes are unchanged///////////");
         myDLL5.printList();
+
+        System.out.println("/////////////myDLL6- set()/////////////");
+        DoublyLinkedList myDLL6 = new DoublyLinkedList(11);
+        myDLL6.append(3);
+        myDLL6.append(23);
+        myDLL6.append(7);
+
+        myDLL6.printList();
+
+        System.out.println("//////////myDLL6 - set() invoked////////////");
+        myDLL6.set(1,4);
+        myDLL6.printList();
+
+        System.out.println("//////////myDLL7 - insert() ////////////");
+        DoublyLinkedList myDLL7 = new DoublyLinkedList(1);
+        myDLL7.append(3);
+        myDLL7.printList();
+        System.out.println("//////////myDLL7 - insert() ////////////");
+        myDLL7.insert(1,2);
+        myDLL7.printList();
     }
 }
