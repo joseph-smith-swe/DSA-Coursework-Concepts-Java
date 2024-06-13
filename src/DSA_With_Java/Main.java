@@ -4,45 +4,46 @@ package DSA_With_Java;
 
 public class Main {
     public static void main(String[] args) {
-//        System.out.println("Hello world!");
+//region Linked List and Doubly Linked List
+
         System.out.println("////////////////Linked List///////////");
-//        LinkedList myLL = new LinkedList(2);
-//        LinkedList myLL = new LinkedList(0);
-//        System.out.println(myLL);//Here we get only a memory address
-
-//        myLL.getHead();
-//        myLL.getTail();
-//        myLL.getLength();
-//        myLL.printList();
-//
-//        myLL.append(3);
-//        myLL.append(1);
-//        myLL.prepend(1);
-//        myLL.printList();
-//        System.out.println("/////////Returns from removeLast() method invocations///////////");
-//        //(2) Items -Returns 2 Nodes
-//        System.out.println(myLL.removeLast().value);
-//        // (1) Item -Returns 1 Node
-//        System.out.println(myLL.removeLast().value);
-//        // (0) Items - Returns null
-//        System.out.println(myLL.removeLast());
-
-//        System.out.println("////Returns from removeFirst()////");
-//        //(2) Items - Return 2 Node
-//        System.out.println(myLL.removeFirst().value);
-//        //(1) Item - Returns 1 Node
-//        System.out.println(myLL.removeFirst().value);
-//        //(0) Items - Returns null
-//        System.out.println(myLL.removeFirst());
+    //        LinkedList myLL = new LinkedList(2);
+    //        LinkedList myLL = new LinkedList(0);
+    //        System.out.println(myLL);//Here we get only a memory address
+    //
+    //        myLL.getHead();
+    //        myLL.getTail();
+    //        myLL.getLength();
+    //        myLL.printList();
+    //
+    //        myLL.append(3);
+    //        myLL.append(1);
+    //        myLL.prepend(1);
+    //        myLL.printList();
+    //        System.out.println("/////////Returns from removeLast() method invocations///////////");
+    //        //(2) Items -Returns 2 Nodes
+    //        System.out.println(myLL.removeLast().value);
+    //        // (1) Item -Returns 1 Node
+    //        System.out.println(myLL.removeLast().value);
+    //        // (0) Items - Returns null
+    //        System.out.println(myLL.removeLast());
+    //
+    //        System.out.println("////Returns from removeFirst()////");
+    //        //(2) Items - Return 2 Node
+    //        System.out.println(myLL.removeFirst().value);
+    //        //(1) Item - Returns 1 Node
+    //        System.out.println(myLL.removeFirst().value);
+    //        //(0) Items - Returns null
+    //        System.out.println(myLL.removeFirst());
 
         System.out.println("///////Spacer/////////////");
-//        LinkedList myLL = new LinkedList(0);
-//        System.out.println("///////Returns from get() method//////" +"\n");
-//        myLL.append(1);
-//        myLL.append(2);
-//        myLL.append(3);
-//        System.out.println("The returned node from the get() method: "+ myLL.get(2).value);
-//        myLL.printList();
+        LinkedList myLL = new LinkedList(0);
+        System.out.println("///////Returns from get() method//////" +"\n");
+        myLL.append(1);
+        myLL.append(2);
+        myLL.append(3);
+        System.out.println("The returned node from the get() method: "+ myLL.get(2).value);
+        myLL.printList();
 
         System.out.println("//////////////myLL2///////////////////");
         LinkedList myLL2 = new LinkedList(11);
@@ -50,8 +51,8 @@ public class Main {
         myLL2.append(23);
         myLL2.append(7);
         myLL2.setV2(3,4);  //"3" will change to "4"
-//        System.out.println(myLL2.setV2(-1,4));
-//        myLL2.set(1,5);
+    //        System.out.println(myLL2.setV2(-1,4));
+    //        myLL2.set(1,5);
         myLL2.printList();
 
         System.out.println("//////////////////myLL3////////////////");
@@ -66,7 +67,7 @@ public class Main {
         myLL4.append(3);
         myLL4.append(23);
         myLL4.append(7);
-//        myLL4.remove(2);
+    //        myLL4.remove(2);
         myLL4.printList();
 
         System.out.println("/////////////myLL5 - Reverse the Linked List");
@@ -168,5 +169,36 @@ public class Main {
         System.out.println("//////////myDLL8 - remove() invoked// ////////////");
         myDLL8.remove(1);
         myDLL8.printList();
+//endregion
+
+
+//region Stack implemented as a Linked List
+
+        System.out.println("/////////////myStack - test//////////");
+        Stack myStack = new Stack(4);
+        myStack.getTop();
+        myStack.getHeight();
+        myStack.printStack();
+
+        System.out.println("/////////////myStack1 //////////");
+        Stack myStack1 = new Stack(2);
+        myStack1.printStack();
+        System.out.println("/////////////myStack1 - push()//////////");
+        myStack1.push(1);
+        myStack1.printStack();
+
+        System.out.println("///////////myStack2//////////////");
+        Stack myStack2 = new Stack(7);
+        myStack2.push(23);
+        myStack2.push(3);
+        myStack2.push(11);
+        myStack2.printStack();
+        System.out.println("///////////myStack2- pop() invoked//////////////");
+        myStack2.pop();
+        myStack2.printStack();
+
+
+
+//end region
     }
 }
