@@ -46,7 +46,6 @@ public class Stack {
         }
         height++;
     }
-
     public Node pop(){
         if(height == 0) return null;
         Node temp = top;//we return a Node so we need a var that points to it.

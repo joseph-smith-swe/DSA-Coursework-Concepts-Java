@@ -1,7 +1,6 @@
 package DSA_With_Java.Data_Structures.Queue;
 
 public class Queue {
-
     private Node first;
     private Node last;
     private int length;
@@ -43,6 +42,10 @@ public class Queue {
     }
 
     public void enqueue(int value){
+        /*Edge Cases:
+        * 1) Zero items in the queue
+        * 2) One or more items in the queue
+        * */
         Node newNode = new Node(value);
         if(length == 0){
             first =  newNode;
@@ -52,6 +55,23 @@ public class Queue {
             last = newNode;
         }
         length++;
+    }
 
+    public Node dequeue(){
+        /*Edge Cases:
+        * 1) Zero items in the queue
+        * 2) One item in the queue
+        * 3) Two or more items in the queue*/
+        if(length == 0)return null; //or if(first == null)
+        Node temp = first;
+        if(length == 1){
+            first = null;
+            last = null;
+        }else {
+            first = first.next; //move first pointer over
+            temp.next = null; //unlink Node temp is pointing to
+        }
+        length--;
+        return temp;
     }
 }

@@ -2,7 +2,7 @@ package DSA_With_Java.Data_Structures.Stack;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("/////////////myStack - test//////////");
+        System.out.println("/////////////Stack - Functionality Test//////////");
         Stack myStack = new Stack(4);
         myStack.getTop();
         myStack.getHeight();

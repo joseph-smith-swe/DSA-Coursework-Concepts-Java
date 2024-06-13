@@ -2,7 +2,7 @@ package DSA_With_Java.Data_Structures.LinkedList;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("////////////////Linked List///////////");
+        System.out.println("////////////////Linked List- Functionality Test///////////");
         //        LinkedList myLL = new LinkedList(2);
         //        LinkedList myLL = new LinkedList(0);
         //        System.out.println(myLL);//Here we get only a memory address
