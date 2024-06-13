@@ -12,7 +12,6 @@ public class DoublyLinkedList {
 
         Node(int value){
             this.value = value;
-
         }
     }
 
@@ -171,5 +170,31 @@ public class DoublyLinkedList {
 
         length++;
         return true;
+    }
+
+    public Node remove(int index){
+        /*Edge Cases
+        * 1) index argument is out of bounds
+        * 2) remove the first Node in DLL
+        * 3) remove the last Node in DLL
+        * 4) remove a Node in the middle of the DLL
+        * */
+        if(index < 0 || index >= length) return null;
+        if(index == 0) return  removeFirst();
+        if(index == length - 1 ) return removeLast();
+
+        Node temp = get(index);
+
+        /*We can remove a Node using only the temp ref variable instead of adding the before and after ref vars also*/
+        /*The Nodes before and after temp are linked*/
+        temp.next.prev = temp.prev;
+        temp.prev.next = temp.next;
+
+        /*The Node to which temp is pointing to is unlinked(removed) from the DLL*/
+        temp.next = null;
+        temp.prev = null;
+
+        length--;
+        return temp;
     }
 }

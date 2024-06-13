@@ -155,8 +155,18 @@ public class Main {
         DoublyLinkedList myDLL7 = new DoublyLinkedList(1);
         myDLL7.append(3);
         myDLL7.printList();
-        System.out.println("//////////myDLL7 - insert() ////////////");
+        System.out.println("//////////myDLL7 - insert() invoked ////////////");
         myDLL7.insert(1,2);
         myDLL7.printList();
+
+        System.out.println("//////////myDLL8 - remove()////////////////////");
+        DoublyLinkedList myDLL8 = new DoublyLinkedList(0);
+        myDLL8.append(1);
+        myDLL8.append(2);
+        myDLL8.printList();
+
+        System.out.println("//////////myDLL8 - remove() invoked// ////////////");
+        myDLL8.remove(1);
+        myDLL8.printList();
     }
 }
