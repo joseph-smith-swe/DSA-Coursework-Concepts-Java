@@ -44,10 +44,22 @@ public class BinarySearchTree {
                 }
                 temp = temp.right; //The if condition has returned false. This code is executed.
             }
-
         }
-
     }
+
+    public boolean contains(int value){
+//        if(root == null) return false; //not needed
+        Node temp = root;
+        while(temp != null){
+            if(value < temp.value){
+                temp = temp.left; //temp "moved" down to the left
+            } else if(value > temp.value){
+                temp = temp.right;
+            } else return true;
+        }
+        return false;
+    }
+
 
 
 }
