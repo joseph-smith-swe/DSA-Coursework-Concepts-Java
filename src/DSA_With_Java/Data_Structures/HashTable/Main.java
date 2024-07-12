@@ -14,5 +14,15 @@ public class Main {
         myHT2.set("screws", 140);
 
         myHT2.printTable();
+
+        System.out.println("//////////////////myHT3////////////////////");
+        HashTable myHT3 = new HashTable();
+        myHT3.set("nails", 100);
+        myHT3.set("tile", 50);
+        myHT3.set("lumber", 80);
+
+        myHT3.printTable();
+        System.out.println(myHT3.get("lumber"));
+        System.out.println(myHT3.get("bolts"));
     }
 }

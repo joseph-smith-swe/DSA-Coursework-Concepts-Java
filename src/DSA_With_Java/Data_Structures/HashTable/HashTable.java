@@ -64,4 +64,16 @@ public class HashTable {
             temp.next = newNode; //newNode added to the linked list
         }
     }
+
+    public int get(String key){
+        /*We return an int which is the value associated with the key in the parameter*/
+        int index = hash(key); // get the index for the key parameter
+        Node temp = dataMap[index]; //temp ref var pointed to the first Node
+        while(temp!= null){
+            if(temp.key == key) return temp.value;
+            temp = temp.next; //move temp ref var forward if the key does not match
+        }
+        return 0;
+
+    }
 }
