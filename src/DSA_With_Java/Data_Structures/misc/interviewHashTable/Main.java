@@ -3,6 +3,7 @@ package DSA_With_Java.Data_Structures.misc.interviewHashTable;
 import java.util.HashMap;
 
 public class Main {
+    /*General note, insertion and lookup operations BY KEY in a HashTable is O(1) constant time. */
 
     /*In this code (itemInCommon()), we find if an item is present within two arrays
     * and return a boolean result. The issue is that this code is inefficient
