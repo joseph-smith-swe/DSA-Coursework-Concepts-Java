@@ -24,5 +24,18 @@ public class Main {
         myHT3.printTable();
         System.out.println(myHT3.get("lumber"));
         System.out.println(myHT3.get("bolts"));
+
+        System.out.println("//////////////////myHT4////////////////////");
+        HashTable myHT4 = new HashTable();
+        myHT4.set("paint", 20);
+        myHT4.set("bolts", 40);
+        myHT4.set("nails", 100);
+        myHT4.set("tile", 50);
+        myHT4.set("lumber", 80);
+
+//        myHT4.printTable();
+
+        //This will print out the ArrayList that the keys() returnss
+        System.out.println(myHT4.keys());
     }
 }

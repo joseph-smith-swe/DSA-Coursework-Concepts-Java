@@ -1,5 +1,7 @@
 package DSA_With_Java.Data_Structures.HashTable;
 
+import java.util.ArrayList;
+
 public class HashTable {
     private int size = 7;
     private Node[] dataMap; //type Node, so a pointer to a Node. An array of pointers to Nodes.
@@ -74,6 +76,29 @@ public class HashTable {
             temp = temp.next; //move temp ref var forward if the key does not match
         }
         return 0;
+    }
 
+    public ArrayList keys(){
+        //This method takes all the keys from the hashtable and puts then in an ArrayList
+        //We then return that ArrayList
+        ArrayList<String> allKeys = new ArrayList<>(); //create the ArrayList that we will return
+
+        for (int i = 0; i < dataMap.length; i++) { //we loop through the array (ie, dataMap) and examine each index top to bottom
+
+            Node temp = dataMap[i]; //we need a temp variable of type Node to loop through the nodes.
+                                    //"Node temp is set to the dataMap at a particular index i.
+
+            //we need a while loop to iterate over the LinkedList because we do not know how many items are in it.
+            while(temp != null){
+                //Inside this while loop we add items to the allKeys ArrayList
+                allKeys.add(temp.key);
+
+                //temp is moved forward here
+                temp = temp.next;
+
+            }
+        }
+        //with all items added to allKeys ArrayList, we return that ArrayList
+        return allKeys;
     }
 }
